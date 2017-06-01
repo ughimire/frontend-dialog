@@ -55,7 +55,7 @@ class FD_Frontend_Assets
      */
     public function frontend_scripts()
     {
-        $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+        $suffix = "";// defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
         // Register Scripts
 
@@ -82,7 +82,6 @@ class FD_Frontend_Assets
 
     public function frontend_dialog_shortcode_script()
     {
-
 
 
     }
