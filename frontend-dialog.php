@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Frontend Dialog
- * Plugin URI: http://umeshghimire.com.np
+ * Plugin URI: http://umeshghimire.com.np/plugins/frontend-dialog
  * Description: Show dialog on home page or any other page and on posts
  * Version: 1.0.0
  * Author: Umesh Ghimire
