@@ -7,7 +7,7 @@
  * Author: Umesh Ghimire
  * Author URI: http://umeshghimire.com.np
  * Requires at least: 4.0
- * Tested up to: 4.8
+ * Tested up to: 4.7
  *
  * Text Domain: frontend-dialog
  * Domain Path: /languages/
