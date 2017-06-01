@@ -124,6 +124,8 @@ class FD_Shortcodes
         echo "<div style='display:none'>";
         echo "<a class='fd_inline_colorbox' href='#fd_inline_colorbox_content'>Inline HTML</a><div id='fd_inline_colorbox_content'>";
         if (isset($content[0])) {
+
+            echo "<h2 class='fd-post-title'>" . $content[0]->post_title . "</h2>";
             echo $content[0]->post_content;
 
         } else {
