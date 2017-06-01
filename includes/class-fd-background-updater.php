@@ -98,11 +98,11 @@ class FD_Background_Updater extends WP_Background_Process
      */
     protected function task($callback)
     {
-        if (!defined('UR_UPDATING')) {
-            define('UR_UPDATING', true);
+        if (!defined('FD_UPDATING')) {
+            define('FD_UPDATING', true);
         }
 
-        include_once('functions-ur-update.php');
+        include_once('functions-fd-update.php');
 
         if (is_callable($callback)) {
             call_user_func($callback);
@@ -119,7 +119,7 @@ class FD_Background_Updater extends WP_Background_Process
      */
     protected function complete()
     {
-        UR_Install::update_db_version();
+        FD_Install::update_db_version();
         parent::complete();
     }
 }

@@ -66,11 +66,12 @@ class FD_Admin_Assets
         $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
         // Register Scripts
-        wp_register_script('frontend-dialog-admin', UR()->plugin_url() . '/assets/js/admin/admin' . $suffix . '.js', array(
+        wp_register_script('frontend-dialog-admin', FD()->plugin_url() . '/assets/js/admin/admin' . $suffix . '.js', array(
             'jquery'
         ), FD_VERSION);
 
-        
+
+
         $params = array(
             'ajax_url' => admin_url('admin-ajax.php'),
             'user_input_dropped' => wp_create_nonce('user_input_dropped_nonce')

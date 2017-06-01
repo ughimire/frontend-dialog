@@ -25,6 +25,7 @@ class FD_Frontend
     public function __construct()
     {
 
+
         add_action('init', array($this, 'includes'));
     }
 
@@ -40,4 +41,4 @@ class FD_Frontend
     }
 }
 
-return new FD_Admin();
+return new FD_Frontend();

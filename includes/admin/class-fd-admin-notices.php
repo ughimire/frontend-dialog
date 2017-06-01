@@ -131,7 +131,7 @@ class FD_Admin_Notices
         $notices = self::get_notices();
 
         if ($notices) {
-            wp_enqueue_style('frontend-dialog-activation', UR()->plugin_url() . '/assets/css/activation.css', array(), FD_VERSION);
+            wp_enqueue_style('frontend-dialog-activation', FD()->plugin_url() . '/assets/css/activation.css', array(), FD_VERSION);
             foreach ($notices as $notice) {
                 if (!empty(self::$core_notices[$notice]) && apply_filters('frontend_dialog_show_admin_notice', true, $notice)) {
                     add_action('admin_notices', array(__CLASS__, self::$core_notices[$notice]));

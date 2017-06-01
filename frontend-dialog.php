@@ -99,6 +99,10 @@ if (!class_exists('FrontendDialog')) :
             register_activation_hook(__FILE__, array('FD_Install', 'install'));
 
             add_action('init', array($this, 'load_plugin_textdomain'));
+
+            add_action('init', array('FD_Shortcodes', 'init'));
+
+
         }
 
         /**
@@ -113,6 +117,7 @@ if (!class_exists('FrontendDialog')) :
             $this->define('FD_VERSION', $this->version);
             $this->define('FD_FORM_PATH', FD_ABSPATH . 'includes' . FD_DS . 'form' . FD_DS);
         }
+
 
         /**
          * Define constant if not already set.
@@ -165,10 +170,26 @@ if (!class_exists('FrontendDialog')) :
             if ($this->is_request('admin')) {
 
                 include_once(FD_ABSPATH . 'includes/admin/class-fd-admin.php');
-
             }
 
+            if ($this->is_request('frontend')) {
+
+
+                $this->frontend_includes();
+            }
+
+
+        }
+
+
+        /**
+         * Include required frontend files.
+         */
+        public function frontend_includes()
+        {
             include_once(FD_ABSPATH . 'includes/frontend/class-fd-frontend.php');
+
+            include_once(FD_ABSPATH . 'includes/class-fd-shortcodes.php');         // Shortcodes Class
 
         }
 

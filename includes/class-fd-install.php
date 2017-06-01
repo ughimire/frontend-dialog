@@ -57,7 +57,7 @@ class FD_Install
      */
     public static function check_version()
     {
-        if (!defined('IFRAME_REQUEST') && get_option('frontend_dialog_version') !== UR()->version) {
+        if (!defined('IFRAME_REQUEST') && get_option('frontend_dialog_version') !== FD()->version) {
             self::install();
             do_action('frontend_dialog_updated');
         }
@@ -81,7 +81,7 @@ class FD_Install
     }
 
     /**
-     * Install UR.
+     * Install FD.
      */
     public static function install()
     {
@@ -140,12 +140,12 @@ class FD_Install
     }
 
     /**
-     * Update UR version to current.
+     * Update FD version to current.
      */
     private static function update_ur_version()
     {
         delete_option('frontend_dialog_version');
-        add_option('frontend_dialog_version', UR()->version);
+        add_option('frontend_dialog_version', FD()->version);
     }
 
     /**
@@ -177,7 +177,7 @@ class FD_Install
     public static function update_db_version($version = null)
     {
         delete_option('frontend_dialog_db_version');
-        add_option('frontend_dialog_db_version', is_null($version) ? UR()->version : $version);
+        add_option('frontend_dialog_db_version', is_null($version) ? FD()->version : $version);
     }
 
     /**

@@ -37,7 +37,7 @@ class FD_Autoloader
 
         spl_autoload_register(array($this, 'autoload'));
 
-        $this->include_path = untrailingslashit(plugin_dir_path(UR_PLUGIN_FILE)) . '/includes/';
+        $this->include_path = untrailingslashit(plugin_dir_path(FD_PLUGIN_FILE)) . '/includes/';
     }
 
     /**
@@ -65,7 +65,7 @@ class FD_Autoloader
     }
 
     /**
-     * Auto-load UR classes on demand to reduce memory consumption.
+     * Auto-load FD classes on demand to reduce memory consumption.
      * @param string $class
      */
     public function autoload($class)

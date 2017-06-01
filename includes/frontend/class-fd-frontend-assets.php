@@ -27,56 +27,62 @@ class FD_Frontend_Assets
     public function __construct()
     {
 
-        add_action('wp_enqueue_scripts', array($this, 'admin_styles'));
-        add_action('wp_enqueue_scripts', array($this, 'admin_scripts'));
+        add_action('wp_enqueue_scripts', array($this, 'frontend_styles'));
+        add_action('wp_enqueue_scripts', array($this, 'frontend_scripts'));
+        //add_action('after_frontend_dialog_shortcode', array($this, 'frontend_dialog_shortcode_script'));
     }
 
     /**
      * Enqueue styles.
      */
-    public function admin_styles()
+    public function frontend_styles()
     {
 
         global $wp_scripts;
 
-        $screen = get_current_screen();
+        //$jquery_version = isset($wp_scripts->registered['jquery-ui-core']->ver) ? $wp_scripts->registered['jquery-ui-core']->ver : '1.9.2';
 
-        $screen_id = $screen ? $screen->id : '';
+        wp_register_style('colorbox-style', FD()->plugin_url() . '/assets/css/colorbox.css', array(), FD_VERSION);
 
-        $jquery_version = isset($wp_scripts->registered['jquery-ui-core']->ver) ? $wp_scripts->registered['jquery-ui-core']->ver : '1.9.2';
-
-        wp_register_style('jquery-ui-style', '//code.jquery.com/ui/' . $jquery_version . '/themes/smoothness/jquery-ui.css', array(), $jquery_version);
-
-        wp_enqueue_style('jquery-ui-style');
+        wp_enqueue_style('colorbox-style');
 
 
     }
 
+
     /**
      * Enqueue scripts.
      */
-    public function admin_scripts()
+    public function frontend_scripts()
     {
-
-        $screen = get_current_screen();
-
-        $screen_id = $screen ? $screen->id : '';
-
         $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
         // Register Scripts
-        wp_register_script('frontend-dialog-admin', UR()->plugin_url() . '/assets/js/admin/frontend' . $suffix . '.js', array(
+
+        wp_register_script('colorbox', FD()->plugin_url() . '/assets/js/colorbox/jquery.colorbox' . $suffix . '.js', array(
             'jquery'
         ), FD_VERSION);
 
 
+        wp_register_script('frontend_dialog_frontend', FD()->plugin_url() . '/assets/js/frontend/frontend' . $suffix . '.js', array(
+            'jquery',
+            'colorbox'
+        ), FD_VERSION);
+        wp_enqueue_script('frontend_dialog_frontend');
+
         $params = array(
             'ajax_url' => admin_url('admin-ajax.php'),
-            
-            'user_input_dropped' => wp_create_nonce('user_input_dropped_nonce')
+
+            //'user_input_dropped' => wp_create_nonce('user_input_dropped_nonce')
         );
 
         wp_localize_script('frontend-dialog-frontend', 'frontend_dialog_frontend_data', $params);
+
+    }
+
+    public function frontend_dialog_shortcode_script()
+    {
+
 
 
     }
