@@ -22,5 +22,10 @@
   "homepage": "https://github.com/ughimire/frontend-dialog#readme",
   "devDependencies": {
     "grunt": "^1.0.1"
+  },
+  "dependencies": {
+    "bourbon": "^4.3.4",
+    "grunt-sass": "^2.0.0",
+    "node-bourbon": "^4.2.8"
   }
 }

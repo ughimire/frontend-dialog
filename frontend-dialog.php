@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Frontend Dialog
  * Plugin URI: http://umeshghimire.com.np/plugins/frontend-dialog
- * Description: Show dialog on home page or any other page and on posts
+ * Description: Show dialog on home page or any other page and on posts with this shortcode. Example: [frontend_dialog post_id="1"] or [frontend_dialog page_id="4"]
  * Version: 1.0.0
  * Author: Umesh Ghimire
  * Author URI: http://umeshghimire.com.np

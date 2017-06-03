@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: ughimire1
 Donate link: http://umeshghimire.com.np
-Tags: Frontend dialog, popup dialog, popup page, homepage popup,jquery popup add, wordpress plugin
+Tags: Frontend dialog, popup dialog, popup page, homepage popup,jquery popup wordpress, wordpress popup plugin
 Requires at least: 3.0.1
 Tested up to: 4.7
 Stable tag: 4.7
@@ -26,11 +26,14 @@ We can add dialog on page, post or any widgets load, via shortcode.
 
 == Frequently Asked Questions ==
 Do you have questions or issues with Frontend Dialog Plugin?
-1. Soon we are coming with full documentation.
+1. Soon we'll coming with full documentation.
 
  
  
 == Screenshots ==
+
+1. Frotend Dialog Shortcode
+2. Frontend Dialog front view (user interface popup view)
 
 
  
